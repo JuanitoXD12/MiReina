@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  min-height: 100vh;
+  background: url(../img/fondo\ amolmio.jpg) black no-repeat center center fixed;
+  background-size: cover;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navigation ul li {
+  position: relative;
+  display: inline-table;
+}
+
+.navigation ul li a {
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navigation ul li a::after {
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.navigation ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.144);
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.navigation ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.144);
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.navigation ul li ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+}
+
+.navigation ul li:hover > ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#toggle,
+.menu-label {
+  display: none;
+}
+
+.menu-icon {
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Estilos del menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navigation ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navigation ul li {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navigation ul li a {
+    padding: 15px;
+  }
+
+  #toggle:checked + .menu-label + .navigation ul {
+    display: block;
+  }
+
+  .menu-label {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .logo {
+    margin-right: 50px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding: 13%;
+  margin-top: 100px;
+  text-align: center;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(5px);
+  margin: 8%;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.808);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.hero p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.808);
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.italic-text {
+  font-style: italic;
+  font-size: 24px;
+  color: white;
+  margin-top: 20px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.808);
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.line {
+  margin-top: 30px;
+  border-top: 2px solid #fff;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+.year {
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+  font-family: "Dancing Script", cursive;
+  animation: fadeInUp 2.5s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="../css/NuestraH.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="heart" class="heart" onclick="showLove()">💙</div>
+      <h1>Nuestra Historia :D!!</h1>
+      
+      <!-- Sección 1 -->
+      <div class="story-section" id="section1">
+        <h2>Momentitos con Hellencita</h2>
+        <p>Cuando nos divertimos con Hellentrucha</p>
+        <div class="photos">
+          <div class="photo-placeholder" style="background-image: url(../img/Hellencita1.PNG);"></div>
+          <div class="photo-placeholder" style="background-image: url(../img/Hellencita2.PNG);"></div>
+        </div>
+        <button class="button" onclick="showNextSection(2)">
+          Siguiente Capítulo
+        </button>
+      </div>
+
+      <!-- Sección 2 -->
+      <div class="story-section" id="section2">
+        <h2>Nuestras primeras (citas)</h2>
+        <p>Cuando te di uno de los primeros picos en la mejilla</p>
+        <div class="photos">
+          <div class="photo-placeholder" style="background-image: url(../img/Citas1.jpg);"></div>
+          <div class="photo-placeholder" style="background-image: url(../img/Citas2.jpg);"></div>
+        </div>
+        <button class="button" onclick="showNextSection(3)">Continuar</button>
+      </div>
+
+      <!-- Sección 3 -->
+      <div class="story-section" id="section3">
+        <h2>Momentos Especiales</h2>
+        <p>Cada día contigo marca una parte de mí</p>
+        <div class="photos">
+          <div class="photo-placeholder" style="background-image: url(../img/Graduacion.jpg);"></div>
+          <div class="photo-placeholder" style="background-image: url(../img/Viaje.jpeg);"></div>
+        </div>
+        <div id="message-box"></div>
+        <button class="button" onclick="showLoveMessage()">¡Sorpresa!</button>
+      </div>
+    </div>
+
+    <script src="../js/NuestraH.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.photo-overlay {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+}
+.swiper-slide img {
+    transition: transform 0.3s ease-in-out;
+}
+.swiper-slide:hover img {
+    transform: scale(1.05);
+}
+.love-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}

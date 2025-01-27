@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuerdos Juntos</title>
+    <link rel="stylesheet" href="../css/Recuerdos.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="memory">
+        <h2>De nustros primeros besitos</h2>
+        <img src="../img/De los primeros besitos.jpeg" />
+        <p>
+          No sabes como es la sensación que sentia y sigo sintiendo al momento que me besas me haces ver estrellas, me haces sentir afortunado de tener a alguien como tú que tienes unos labios tan deliciosos. 
+        </p>
+        <button
+          class="interactive-btn"
+          onclick="alert('¡Gracias por ser parte de mi vida!')"
+        >
+          Deja tu mensaje
+        </button>
+      </div>
+      <div class="memory">
+        <h2>La vez que me maquillaste</h2>
+        <img src="../img/maquillaste.jpeg" />
+        <p>
+          Me senti muy bien al pasar ese momento tan lindo contigo jsjsjs, me veia muy, pero muy chistoso era una mujer de clase para que veas, me volvi la 2da mujer más bella del universo en ese momento porque la primera eres tú.
+        </p>
+        <button class="interactive-btn" onclick="alert('¡Siempre juntos!')">
+          Deja tu mensaje
+        </button>
+      </div>
+      <div class="memory">
+        <h2>El cumple feliz</h2>
+        <img src="../img/Mi cumple.jpeg" />
+        <p>
+          Cuando decias que no ibas a ir a mi cumpleaños y yo te decia que no pasaba nada, pero en realidad estaba tristre. Al final terminaste yendo y no sabes lo feliz que me hizo verte en mi cumple,tambien ese regalo tan increible que me diste de los zapatos y el detalle me hizo demasiado feliz, nunca me habian dado un regalo así. Gracias!!
+        </p>
+        <button
+          class="interactive-btn"
+          onclick="alert('Te amo con todo mi corazón')"
+        >
+          Deja tu mensaje
+        </button>
+      </div>
+      <div class="navigation-buttons">
+          <button class="nav-btn" id="prevBtn" onclick="showPrevMemory()" disabled>
+              Anterior
+          </button>
+          <button class="nav-btn" id="nextBtn" onclick="showNextMemory()">
+              Siguiente
+          </button>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Tu Admirador <strong>Number One</strong></p>
+    </footer>
+    <script src="../js/NuestroR.js"></script>
+  </body>
+</html>

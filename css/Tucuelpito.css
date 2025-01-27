@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  background: url(../img/Cuerpito.png) no-repeat center center/cover;
+  animation: gradientAnim 10s ease infinite;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+}
+
+/* Animación de fondo */
+@keyframes gradientAnim {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 20px;
+  font-family: "Dancing Script", cursive;
+  color: #fff;
+  text-shadow: 3px 3px 5px rgba(22, 65, 145, 0.6);
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 5px rgba(22, 65, 145, 0.6);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Cuerpo {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-container {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out;
+  height: 400px; /* Altura fija para el carrusel */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+/* Ajuste de la imagen en el carrusel */
+.slide img {
+  width: 100%;  /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: auto; /* Ajusta la altura manteniendo la proporción */
+  object-fit: cover; /* Mantiene la proporción de la imagen y la ajusta al tamaño del contenedor */
+  max-height: 400px; /* Limita la altura máxima de la imagen */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Añade sombra a las imágenes */
+}
+
+.texto {
+  position: absolute;
+  text-align: center;
+  padding: 0 20px; /* Reducir el padding para no sobrecargar la imagen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  width: 90%; /* Ajuste del tamaño del texto */
+  animation: fadeInTexto 1.5s ease-out forwards;
+}
+
+@keyframes fadeInTexto {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilo para los títulos en las diapositivas */
+.texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Dancing Script", cursive;
+  animation: slideFromTop 1.5s ease-out;
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilo para los párrafos */
+.texto p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 0 15px; /* Ajustar el espacio alrededor del texto */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button.prev {
+  transform: rotate(180deg);
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.button:before {
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms;
+}
+
+.button:after {
+  border: 4px solid #96daf0;
+  transform: scale(1.3);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0;
+}
+
+.button:hover:before {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.button:hover:after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.button:hover .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
+}
+
+@media (max-width: 991px) {
+  .carousel-container {
+    width: 100%;
+    height: 300px; /* Ajustar la altura en pantallas pequeñas */
+  }
+
+  .texto {
+    padding: 0 2rem;
+  }
+
+  .texto h2 {
+    font-size: 1.8rem;
+  }
+
+  .texto p {
+    font-size: 1rem;
+  }
+
+  .navigation {
+    padding: 0.5rem;
+  }
+
+  .button {
+    width: 48px;
+    height: 48px;
+  }
+}
