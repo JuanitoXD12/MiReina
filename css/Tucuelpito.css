@@ -6,10 +6,23 @@
 }
 
 body {
-  background: url(../img/Cuerpito.png) no-repeat center center/cover;
-  animation: gradientAnim 10s ease infinite;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(12, 24, 44, 0.72), rgba(86, 155, 233, 0.45)),
+    url(../img/Cuerpito.png) center/cover no-repeat fixed;
   font-family: Georgia, serif;
   min-height: 100vh;
+  color: #fff;
+}
+
+.body-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 14px 32px;
 }
 
 /* Animación de fondo */
@@ -48,11 +61,19 @@ body {
 }
 
 .logo {
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
   text-shadow: 3px 3px 5px rgba(22, 65, 145, 0.6);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  color: #e6f4ff;
 }
 
 @keyframes fadeIn {
@@ -84,15 +105,18 @@ body {
 }
 
 .carousel-container {
-  max-width: 800px;
+  max-width: 860px;
   width: 100%;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 18px 30px rgba(8, 20, 39, 0.35);
   animation: fadeInUp 1s ease-out;
-  height: 400px; /* Altura fija para el carrusel */
+  height: 460px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(9, 18, 32, 0.35);
+  backdrop-filter: blur(10px);
 }
 
 .carousel {
@@ -107,24 +131,28 @@ body {
 
 /* Ajuste de la imagen en el carrusel */
 .slide img {
-  width: 100%;  /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: auto; /* Ajusta la altura manteniendo la proporción */
-  object-fit: cover; /* Mantiene la proporción de la imagen y la ajusta al tamaño del contenedor */
-  max-height: 400px; /* Limita la altura máxima de la imagen */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Añade sombra a las imágenes */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .texto {
   position: absolute;
-  text-align: center;
-  padding: 0 20px; /* Reducir el padding para no sobrecargar la imagen */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: auto 0 0 0;
+  padding: 14px 14px 18px;
+  background: linear-gradient(to top, rgba(6, 13, 25, 0.88), rgba(6, 13, 25, 0.12));
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  width: 90%; /* Ajuste del tamaño del texto */
-  animation: fadeInTexto 1.5s ease-out forwards;
+  animation: fadeInTexto 1.2s ease-out forwards;
+}
+
+.page-note {
+  text-align: center;
+  color: #eff8ff;
+  font-size: 0.98rem;
+  max-width: 760px;
+  padding: 0 8px;
 }
 
 @keyframes fadeInTexto {

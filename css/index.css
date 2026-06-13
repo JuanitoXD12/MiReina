@@ -11,8 +11,10 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   min-height: 100vh;
-  background: url(../img/fondo\ amolmio.jpg) black no-repeat center center fixed;
-  background-size: cover;
+  background:
+    linear-gradient(135deg, rgba(13, 31, 62, 0.65), rgba(70, 146, 214, 0.55)),
+    url(../img/fondo\ amolmio.jpg) center/cover no-repeat fixed;
+  color: #fff;
 }
 
 .header {
@@ -20,17 +22,23 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 5%;
+  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 20;
+  background: rgba(8, 24, 46, 0.35);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .logo h2 {
   font-size: 18px;
   font-weight: 700;
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .navigation ul li {
@@ -56,9 +64,9 @@ body {
 }
 
 .navigation ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.144);
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(86, 158, 241, 0.18);
 }
 
 .navigation ul li ul {
@@ -99,15 +107,19 @@ body {
 
 /* Estilos del menú en pantallas pequeñas */
 @media (max-width: 768px) {
+  .header {
+    padding: 10px 4%;
+  }
+
   .navigation ul {
     display: none;
     width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(4, 10, 22, 0.96);
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding: 10px 0;
   }
 
@@ -118,7 +130,15 @@ body {
   }
 
   .navigation ul li a {
-    padding: 15px;
+    padding: 14px 16px;
+    font-size: 0.98rem;
+  }
+
+  .navigation ul li ul {
+    position: static;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   #toggle:checked + .menu-label + .navigation ul {
@@ -136,27 +156,60 @@ body {
   .logo {
     margin-right: 50px;
   }
+
+  .main-shell {
+    padding-top: 96px;
+  }
+
+  .hero {
+    padding: 18px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero p,
+  .italic-text {
+    font-size: 1rem;
+  }
 }
 
 /* Hero Section */
+.main-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 18px 40px;
+}
+
 .hero {
-  padding: 13%;
-  margin-top: 100px;
+  width: min(1100px, 100%);
   text-align: center;
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-  background-color: rgba(255, 255, 255, 0.192);
-  backdrop-filter: blur(5px);
-  margin: 8%;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.55);
+  background: linear-gradient(145deg, rgba(10, 18, 35, 0.45), rgba(87, 163, 232, 0.28));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(9, 14, 29, 0.35);
+  padding: 28px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.82rem;
+  color: #dbeeff;
+  margin-bottom: 8px;
 }
 
 .hero h2 {
   font-family: "Dancing Script", cursive;
-  font-size: 36px;
-  color: white;
-  margin-bottom: 20px;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.808);
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  color: #fff;
+  margin-bottom: 14px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
   animation: fadeInUp 1s ease-in-out;
 }
 
@@ -177,13 +230,61 @@ body {
 }
 
 .line {
-  margin-top: 30px;
-  border-top: 2px solid #fff;
+  margin: 24px auto 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-
   animation: drawLine 1.5s ease-out forwards;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: 14px;
+  text-align: left;
+}
+
+.mini-card h3 {
+  margin-bottom: 6px;
+  color: #e8f5ff;
+  font-size: 1.05rem;
+}
+
+.mini-card p {
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.sparkle-btn {
+  margin-top: 18px;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #7ec8ff, #3d7dd8);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 10px 18px rgba(62, 122, 201, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sparkle-btn:hover,
+.sparkle-btn.pulse {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 24px rgba(125, 186, 255, 0.35);
+}
+
+.mood-text {
+  margin-top: 10px;
+  color: #eff8ff;
+  font-size: 0.98rem;
 }
 
 .year {
